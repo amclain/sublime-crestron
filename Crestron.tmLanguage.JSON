@@ -34,7 +34,7 @@
         {
         	"comment": "Crestron Skip Type",
         	"match": "\\b(?i:_skip_)\\b",
-        	"name": "constant"
+        	"name": "constant.language"
         },
         {
         	"comment": "Crestron Function Declarations",
@@ -44,7 +44,7 @@
         {
         	"comment": "Crestron Boolean Types",
         	"match": "\\b(?i:true|false)\\b",
-        	"name": "constant"
+        	"name": "constant.language"
         },
         {
         	"comment": "Crestron Statements",
@@ -147,9 +147,9 @@
         	"name": "keyword"
         },
         {
-            "comment": "common C++ instance var naming idiom -- fMemberName",
-            "match": "\\b(f|m)[A-Z]\\w*\\b",
-            "name": "variable.other.readwrite.member.c++"
+            "comment": "Crestron Constant",
+            "match": "\\b[A-Z_]+\\b",
+            "name": "constant.other",
         },
         {
             "begin": "(?x)\n    \t\t\t\t(?:  ^                                 # begin-of-line\n    \t\t\t\t  |  (?: (?<!else|new|=) )             #  or word + space before name\n    \t\t\t\t)\n    \t\t\t\t((?:[A-Za-z_][A-Za-z0-9_]*::)*+~[A-Za-z_][A-Za-z0-9_]*) # actual name\n    \t\t\t\t \\s*(\\()                           # start bracket or end-of-line\n    \t\t\t",
