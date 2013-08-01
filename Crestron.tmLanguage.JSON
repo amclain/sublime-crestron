@@ -11,9 +11,6 @@
             "include": "#crestron_keywords"
         },
         {
-            "include": "#block"
-        },
-        {
             "include": "#special_block"
         },
         {
@@ -123,9 +120,6 @@
                 {
                     "include": "#parens"
                 },
-                {
-                    "include": "#block"
-                }
             ]
         },
         {
@@ -274,53 +268,6 @@
             "patterns": [
                 {
                     "include": "#angle_brackets"
-                },
-                {
-                    "include": "$base"
-                }
-            ]
-        },
-        "block": {
-            "begin": "\\{",
-            "end": "\\}",
-            "name": "meta.block.usp",
-            "patterns": [
-                {
-                    "include": "#block_innards"
-                }
-            ]
-        },
-        "block_innards": {
-            "patterns": [
-                {
-                    "captures": {
-                        "1": {
-                            "name": "punctuation.whitespace.function-call.leading.usp"
-                        },
-                        "2": {
-                            "name": "support.function.any-method.usp"
-                        },
-                        "3": {
-                            "name": "punctuation.definition.parameters.usp"
-                        }
-                    },
-                    "match": "(?x) (?: (?= \\s )  (?:(?<=else|return) | (?<!\\w)) (\\s+))?\n\t\t\t(\\b\n\t\t\t\t(?!(while|for|do|if|else|switch|catch|enumerate|return|r?iterate)\\s*\\()(?:(?!NS)[A-Za-z_][A-Za-z0-9_]*+\\b | :: )++                  # actual name\n\t\t\t)\n\t\t\t \\s*(\\()",
-                    "name": "meta.function-call.usp"
-                },
-                {
-                    "captures": {
-                        "1": {
-                            "name": "variable.other.usp"
-                        },
-                        "2": {
-                            "name": "punctuation.definition.parameters.usp"
-                        }
-                    },
-                    "match": "(?x)\n\t\t\t        (?x)\n\t\t\t(?:\n\t\t\t     (?: (?= \\s )           (?<!else|return) (?<=\\w)\\s+      #  or word + space before name\n\t\t\t     )\n\t\t\t)\n\t\t\t(\n\t\t\t\t(?: [A-Za-z_][A-Za-z0-9_]*+ | :: )++    |              # actual name\n\t\t\t\t(?: (?<=operator) (?: [-*&<>=+!]+ | \\(\\) | \\[\\] ) )?  # if it is an operator\n\t\t\t)\n\t\t\t \\s*(\\()",
-                    "name": "meta.initialization.usp"
-                },
-                {
-                    "include": "#block"
                 },
                 {
                     "include": "$base"
