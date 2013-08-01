@@ -11,9 +11,6 @@
             "include": "#crestron_keywords"
         },
         {
-            "include": "#special_block"
-        },
-        {
             "include": "#comments"
         },
         {
@@ -119,11 +116,8 @@
                 },
                 {
                     "include": "#parens"
-                },
+                }
             ]
-        },
-        {
-            "include": "#crestron_keywords"
         }
     ],
     "repository": {
@@ -360,145 +354,6 @@
                 }
             ]
         },
-        "special_block": {
-            "patterns": [
-                {
-                    "begin": "\\b(namespace)\\s+([A-Za-z_][_A-Za-z0-9:]*\\b)?+(?!\\s*?(;|=|,))",
-                    "beginCaptures": {
-                        "1": {
-                            "name": "keyword.control.usp"
-                        }
-                    },
-                    "end": "(?<=\\})",
-                    "name": "meta.namespace-block.usp",
-                    "patterns": [
-                        {
-                            "begin": "\\{",
-                            "end": "\\}",
-                            "patterns": [
-                                {
-                                    "include": "#special_block"
-                                },
-                                {
-                                    "include": "#constructor"
-                                },
-                                {
-                                    "include": "$base"
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "captures": {
-                        "1": {
-                            "name": "storage.type.usp"
-                        },
-                        "2": {
-                            "name": "entity.name.type.forward-decl.usp"
-                        }
-                    },
-                    "match": "\\b(class|struct)\\s+([_A-Za-z][_A-Za-z0-9]*\\b);",
-                    "name": "meta.class-struct-block.usp"
-                },
-                {
-                    "begin": "\\b(class|struct)\\s+([_A-Za-z][_A-Za-z0-9]*\\b)",
-                    "beginCaptures": {
-                        "1": {
-                            "name": "storage.type.usp"
-                        },
-                        "2": {
-                            "name": "entity.name.type.usp"
-                        }
-                    },
-                    "end": "(?<=\\})|(?=(;|,|\\(|\\)|>|\\[|\\]))",
-                    "name": "meta.class-struct-block.usp",
-                    "patterns": [
-                        {
-                            "include": "#angle_brackets"
-                        },
-                        {
-                            "begin": "(?<!:):(?!:)",
-                            "end": "(?=\\{)",
-                            "name": "meta.class-struct-block.base-classes.usp",
-                            "patterns": [
-                                {
-                                    "match": "\\b(private|protected|public|virtual)",
-                                    "name": "storage.modifier.usp"
-                                },
-                                {
-                                    "begin": "[_A-Za-z][_A-Za-z0-9]*\\b",
-                                    "end": ",|(?=\\{)",
-                                    "patterns": [
-                                        {
-                                            "include": "#angle_brackets"
-                                        }
-                                    ]
-                                }
-                            ]
-                        },
-                        {
-                            "begin": "(\\{)",
-                            "beginCaptures": {
-                                "1": {
-                                    "name": "punctuation.definition.scope.usp"
-                                }
-                            },
-                            "end": "(\\})(\\s*\\n)?",
-                            "endCaptures": {
-                                "1": {
-                                    "name": "punctuation.definition.invalid.usp"
-                                },
-                                "2": {
-                                    "name": "invalid.illegal.you-forgot-semicolon.usp"
-                                }
-                            },
-                            "patterns": [
-                                {
-                                    "include": "#special_block"
-                                },
-                                {
-                                    "include": "#constructor"
-                                },
-                                {
-                                    "include": "$base"
-                                }
-                            ]
-                        },
-                        {
-                            "include": "$base"
-                        }
-                    ]
-                },
-                {
-                    "begin": "\\b(extern)(?=\\s*\")",
-                    "beginCaptures": {
-                        "1": {
-                            "name": "storage.modifier.usp"
-                        }
-                    },
-                    "end": "(?<=\\})|(?=\\w)",
-                    "name": "meta.extern-block.usp",
-                    "patterns": [
-                        {
-                            "begin": "\\{",
-                            "end": "\\}",
-                            "patterns": [
-                                {
-                                    "include": "#special_block"
-                                },
-                                {
-                                    "include": "$base"
-                                }
-                            ]
-                        },
-                        {
-                            "include": "$base"
-                        }
-                    ]
-                }
-            ]
-        }
     },
     "scopeName": "source.usp",
     "uuid": "26251B18-6B1D-11D9-AFDB-000D93589AF6"
