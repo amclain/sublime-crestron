@@ -260,6 +260,38 @@
                     "include": "$base"
                 }
             ]
+        },
+        {
+            "comment": "function name highlighting",
+            "begin": "(?x)\n    \t\t(?:  ^                                 # begin-of-line\n    \t\t  |\n    \t\t     (?: (?= \\s )           (?<!else|new|return) (?<=\\w)      #  or word + space before name\n    \t\t       | (?= \\s*[A-Za-z_] ) (?<!&&)       (?<=[*&>])   #  or type modifier before name\n    \t\t     )\n    \t\t)\n    \t\t(\\s*) (?!(while|for|do|if|else|switch|catch|enumerate|return|r?iterate)\\s*\\()\n    \t\t(\n    \t\t\t(?: [A-Za-z_][A-Za-z0-9_]*+ | :: )++ |                  # actual name\n    \t\t\t(?: (?<=operator) (?: [-*&<>=+!]+ | \\(\\) | \\[\\] ) )  # if it is a C++ operator\n    \t\t)\n    \t\t \\s*(?=\\()",
+            "beginCaptures": {
+                "1": {
+                    "name": "punctuation.whitespace.function.leading.c"
+                },
+                "3": {
+                    "name": "entity.name.function.c"
+                },
+                "4": {
+                    "name": "punctuation.definition.parameters.c"
+                }
+            },
+            "end": "(?<=\\})|(?=#)|(;)",
+            "name": "meta.function.c",
+            "patterns": [
+                {
+                    "include": "#comments"
+                },
+                {
+                    "include": "#parens"
+                },
+                {
+                    "match": "\\b(const|override)\\b",
+                    "name": "storage.modifier.c"
+                },
+                {
+                    "include": "#block"
+                }
+            ]
         }
     ],
     "repository": {
