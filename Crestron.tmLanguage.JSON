@@ -98,19 +98,16 @@
         },
         {
             "comment": "function name highlighting",
-            "begin": "(?x)\n    \t\t(?:  ^                                 # begin-of-line\n    \t\t  |\n    \t\t     (?: (?= \\s )           (?<!else|return) (?<=\\w)      #  or word + space before name\n    \t\t       | (?= \\s*[A-Za-z_] ) (?<!&&)       (?<=[*&>])   #  or type modifier before name\n    \t\t     )\n    \t\t)\n    \t\t(\\s*) (?!(while|for|do|if|else|switch|catch|enumerate|return|r?iterate)\\s*\\()\n    \t\t(\n    \t\t\t(?: [A-Za-z_][A-Za-z0-9_]*+ | :: )++ |                  # actual name\n    \t\t\t(?: (?<=operator) (?: [-*&<>=+!]+ | \\(\\) | \\[\\] ) )  # if it is an operator\n    \t\t)\n    \t\t \\s*(?=\\()",
+            "begin": "(?i)\\s*(function|string_function|integer_function)\\s+(\\b[a-z0-9_]*\\b)",
             "beginCaptures": {
                 "1": {
-                    "name": "punctuation.whitespace.function.leading.usp"
+                    "name": "keyword"
                 },
-                "3": {
+                "2": {
                     "name": "entity.name.function.usp"
-                },
-                "4": {
-                    "name": "punctuation.definition.parameters.usp"
                 }
             },
-            "end": "(?<=\\})|(?=#)|(;)",
+            "end": "(\\()|({)|(?<=\\})|(?=#)|(;)",
             "name": "meta.function.usp",
             "patterns": [
                 {
@@ -144,11 +141,6 @@
                     "comment": "Crestron Skip Type",
                     "match": "(?i)\\b(_skip_)\\b",
                     "name": "constant.language"
-                },
-                {
-                    "comment": "Crestron Function Declarations",
-                    "match": "(?i)\\b(function|string_function|integer_function)\\b",
-                    "name": "keyword"
                 },
                 {
                     "comment": "Crestron Boolean Types",
