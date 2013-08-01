@@ -147,51 +147,115 @@
         	"name": "keyword"
         },
         {
-            "comment": "Crestron Constant",
-            "match": "\\b[A-Z_]+\\b",
-            "name": "constant.other",
+            "match": "\\b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))((e|E)(\\+|-)?[0-9]+)?)(L|l|UL|ul|u|U|F|f|ll|LL|ull|ULL)?\\b",
+            "name": "constant.numeric"
         },
         {
-            "begin": "(?x)\n    \t\t\t\t(?:  ^                                 # begin-of-line\n    \t\t\t\t  |  (?: (?<!else|new|=) )             #  or word + space before name\n    \t\t\t\t)\n    \t\t\t\t((?:[A-Za-z_][A-Za-z0-9_]*::)*+~[A-Za-z_][A-Za-z0-9_]*) # actual name\n    \t\t\t\t \\s*(\\()                           # start bracket or end-of-line\n    \t\t\t",
+            "begin": "(?x)\n    \t\t\t\t(?:  ^                                 # begin-of-line\n    \t\t\t\t  |  (?: (?<!else|=) )             #  or word + space before name\n    \t\t\t\t)\n    \t\t\t\t((?:[A-Za-z_][A-Za-z0-9_]*::)*+~[A-Za-z_][A-Za-z0-9_]*) # actual name\n    \t\t\t\t \\s*(\\()                           # start bracket or end-of-line\n    \t\t\t",
             "beginCaptures": {
                 "1": {
-                    "name": "entity.name.function.c++"
+                    "name": "entity.name.function"
                 },
                 "2": {
-                    "name": "punctuation.definition.parameters.c"
+                    "name": "punctuation.definition.parameters"
                 }
             },
             "end": "\\)",
             "endCaptures": {
                 "0": {
-                    "name": "punctuation.definition.parameters.c"
+                    "name": "punctuation.definition.parameters"
                 }
             },
-            "name": "meta.function.destructor.c++",
+        },
+        {
+            "begin": "(?x)\n    \t\t\t\t(?:  ^                                 # begin-of-line\n    \t\t\t\t  |  (?: (?<!else|=) )             #  or word + space before name\n    \t\t\t\t)\n    \t\t\t\t((?:[A-Za-z_][A-Za-z0-9_]*::)*+~[A-Za-z_][A-Za-z0-9_]*) # actual name\n    \t\t\t\t \\s*(\\()                           # terminating semi-colon\n    \t\t\t",
+            "beginCaptures": {
+                "1": {
+                    "name": "entity.name.function"
+                },
+                "2": {
+                    "name": "punctuation.definition.parameters"
+                }
+            },
+            "end": "\\)",
+            "endCaptures": {
+                "0": {
+                    "name": "punctuation.definition.parameters"
+                }
+            },
+        },
+        {
+            "begin": "\"",
+            "beginCaptures": {
+                "0": {
+                    "name": "punctuation.definition.string.begin.c"
+                }
+            },
+            "end": "\"",
+            "endCaptures": {
+                "0": {
+                    "name": "punctuation.definition.string.end.c"
+                }
+            },
+            "name": "string.quoted.double.c",
             "patterns": [
                 {
-                    "include": "$base"
+                    "include": "#string_escaped_char"
+                },
+                {
+                    "include": "#string_placeholder"
                 }
             ]
         },
         {
-            "begin": "(?x)\n    \t\t\t\t(?:  ^                                 # begin-of-line\n    \t\t\t\t  |  (?: (?<!else|new|=) )             #  or word + space before name\n    \t\t\t\t)\n    \t\t\t\t((?:[A-Za-z_][A-Za-z0-9_]*::)*+~[A-Za-z_][A-Za-z0-9_]*) # actual name\n    \t\t\t\t \\s*(\\()                           # terminating semi-colon\n    \t\t\t",
+            "begin": "'",
             "beginCaptures": {
-                "1": {
-                    "name": "entity.name.function.c++"
-                },
-                "2": {
-                    "name": "punctuation.definition.parameters.c"
+                "0": {
+                    "name": "punctuation.definition.string.begin.c"
                 }
             },
-            "end": "\\)",
+            "end": "'",
             "endCaptures": {
                 "0": {
+                    "name": "punctuation.definition.string.end.c"
+                }
+            },
+            "name": "string.quoted.single.c",
+            "patterns": [
+                {
+                    "include": "#string_escaped_char"
+                }
+            ]
+        },
+        {
+            "begin": "(?ix)\n        \t\t^\\s*(\\#define_constant)\\s+             # define\n        \t\t((?<id>[a-zA-Z_][a-zA-Z0-9_]*))  # macro name\n        \t\t(?:                              # and optionally:\n        \t\t    (\\()                         # an open parenthesis\n        \t\t        (\n        \t\t            \\s* \\g<id> \\s*       # first argument\n        \t\t            ((,) \\s* \\g<id> \\s*)*  # additional arguments\n        \t\t            (?:\\.\\.\\.)?          # varargs ellipsis?\n        \t\t        )\n        \t\t    (\\))                         # a close parenthesis\n        \t\t)?\n        \t",
+            "beginCaptures": {
+                "1": {
+                    "name": "keyword.control.import.define.c"
+                },
+                "2": {
+                    "name": "entity.name.function.preprocessor.c"
+                },
+                "4": {
+                    "name": "punctuation.definition.parameters.c"
+                },
+                "5": {
+                    "name": "variable.parameter.preprocessor.c"
+                },
+                "7": {
+                    "name": "punctuation.separator.parameters.c"
+                },
+                "8": {
                     "name": "punctuation.definition.parameters.c"
                 }
             },
-            "name": "meta.function.destructor.prototype.c++",
+            "end": "(?=(?://|/\\*))|$",
+            "name": "meta.preprocessor.macro.c",
             "patterns": [
+                {
+                    "match": "(?>\\\\\\s*\\n)",
+                    "name": "punctuation.separator.continuation.c"
+                },
                 {
                     "include": "$base"
                 }
