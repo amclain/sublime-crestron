@@ -24,40 +24,6 @@
             "name": "constant.numeric"
         },
         {
-            "begin": "(?x)\n    \t\t\t\t(?:  ^                                 # begin-of-line\n    \t\t\t\t  |  (?: (?<!else|=) )             #  or word + space before name\n    \t\t\t\t)\n    \t\t\t\t((?:[A-Za-z_][A-Za-z0-9_]*::)*+~[A-Za-z_][A-Za-z0-9_]*) # actual name\n    \t\t\t\t \\s*(\\()                           # start bracket or end-of-line\n    \t\t\t",
-            "beginCaptures": {
-                "1": {
-                    "name": "entity.name.function"
-                },
-                "2": {
-                    "name": "punctuation.definition.parameters"
-                }
-            },
-            "end": "\\)",
-            "endCaptures": {
-                "0": {
-                    "name": "punctuation.definition.parameters"
-                }
-            },
-        },
-        {
-            "begin": "(?x)\n    \t\t\t\t(?:  ^                                 # begin-of-line\n    \t\t\t\t  |  (?: (?<!else|=) )             #  or word + space before name\n    \t\t\t\t)\n    \t\t\t\t((?:[A-Za-z_][A-Za-z0-9_]*::)*+~[A-Za-z_][A-Za-z0-9_]*) # actual name\n    \t\t\t\t \\s*(\\()                           # terminating semi-colon\n    \t\t\t",
-            "beginCaptures": {
-                "1": {
-                    "name": "entity.name.function"
-                },
-                "2": {
-                    "name": "punctuation.definition.parameters"
-                }
-            },
-            "end": "\\)",
-            "endCaptures": {
-                "0": {
-                    "name": "punctuation.definition.parameters"
-                }
-            },
-        },
-        {
             "begin": "\"",
             "beginCaptures": {
                 "0": {
@@ -442,48 +408,6 @@
                         {
                             "match": "(?>\\\\\\s*\\n)",
                             "name": "comment"
-                        }
-                    ]
-                }
-            ]
-        },
-        "constructor": {
-            "patterns": [
-                {
-                    "begin": "(?x)\n    \t\t\t\t(?:  ^\\s*)                             # begin-of-line\n    \t\t\t\t((?!while|for|do|if|else|switch|catch|enumerate|r?iterate)[A-Za-z_][A-Za-z0-9_:]*) # actual name\n    \t\t\t\t \\s*(\\()                            # start bracket or end-of-line\n    \t\t\t",
-                    "beginCaptures": {
-                        "1": {
-                            "name": "entity.name.function.usp"
-                        },
-                        "2": {
-                            "name": "punctuation.definition.parameters.usp"
-                        }
-                    },
-                    "end": "\\)",
-                    "endCaptures": {
-                        "0": {
-                            "name": "punctuation.definition.parameters.usp"
-                        }
-                    },
-                    "name": "meta.function.constructor.usp",
-                    "patterns": [
-                        {
-                            "include": "$base"
-                        }
-                    ]
-                },
-                {
-                    "begin": "(?x)\n    \t\t\t\t(:)                            # begin-of-line\n    \t\t\t\t((?=\\s*[A-Za-z_][A-Za-z0-9_:]* # actual name\n    \t\t\t\t \\s*(\\()))                      # start bracket or end-of-line\n    \t\t\t",
-                    "beginCaptures": {
-                        "1": {
-                            "name": "punctuation.definition.parameters.usp"
-                        }
-                    },
-                    "end": "(?=\\{)",
-                    "name": "meta.function.constructor.initializer-list.usp",
-                    "patterns": [
-                        {
-                            "include": "$base"
                         }
                     ]
                 }
