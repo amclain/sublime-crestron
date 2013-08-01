@@ -98,7 +98,7 @@
         },
         {
             "comment": "function name highlighting",
-            "begin": "(?i)\\s*(function|string_function|integer_function)\\s+(\\b[a-z0-9_]*\\b)",
+            "begin": "(?i)\\s*(function|string_function|integer_function|push|change|release|event|socketconnect)\\s+(\\b[a-z0-9_]*\\b)",
             "beginCaptures": {
                 "1": {
                     "name": "keyword"
@@ -160,11 +160,6 @@
                 {
                     "comment": "Crestron Conditionals",
                     "match": "(?i)\\b(break|cswitch|if|else|switch|do|until|for|while|to)\\b",
-                    "name": "keyword"
-                },
-                {
-                    "comment": "Crestron Events",
-                    "match": "(?i)\\b(push|change|release|event|socketconnect)\\b",
                     "name": "keyword"
                 },
                 {
