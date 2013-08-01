@@ -188,16 +188,16 @@
             "begin": "\"",
             "beginCaptures": {
                 "0": {
-                    "name": "punctuation.definition.string.begin.c"
+                    "name": "punctuation.definition.string.begin.usp"
                 }
             },
             "end": "\"",
             "endCaptures": {
                 "0": {
-                    "name": "punctuation.definition.string.end.c"
+                    "name": "punctuation.definition.string.end.usp"
                 }
             },
-            "name": "string.quoted.double.c",
+            "name": "string.quoted.double.usp",
             "patterns": [
                 {
                     "include": "#string_escaped_char"
@@ -211,16 +211,16 @@
             "begin": "'",
             "beginCaptures": {
                 "0": {
-                    "name": "punctuation.definition.string.begin.c"
+                    "name": "punctuation.definition.string.begin.usp"
                 }
             },
             "end": "'",
             "endCaptures": {
                 "0": {
-                    "name": "punctuation.definition.string.end.c"
+                    "name": "punctuation.definition.string.end.usp"
                 }
             },
-            "name": "string.quoted.single.c",
+            "name": "string.quoted.single.usp",
             "patterns": [
                 {
                     "include": "#string_escaped_char"
@@ -231,30 +231,30 @@
             "begin": "(?ix)\n        \t\t^\\s*(\\#(?i:define_constant))\\s+             # define\n        \t\t((?<id>[a-zA-Z_][a-zA-Z0-9_]*))  # macro name\n        \t\t(?:                              # and optionally:\n        \t\t    (\\()                         # an open parenthesis\n        \t\t        (\n        \t\t            \\s* \\g<id> \\s*       # first argument\n        \t\t            ((,) \\s* \\g<id> \\s*)*  # additional arguments\n        \t\t            (?:\\.\\.\\.)?          # varargs ellipsis?\n        \t\t        )\n        \t\t    (\\))                         # a close parenthesis\n        \t\t)?\n        \t",
             "beginCaptures": {
                 "1": {
-                    "name": "keyword.control.import.define.c"
+                    "name": "keyword.control.import.define.usp"
                 },
                 "2": {
-                    "name": "entity.name.function.preprocessor.c"
+                    "name": "entity.name.function.preprocessor.usp"
                 },
                 "4": {
-                    "name": "punctuation.definition.parameters.c"
+                    "name": "punctuation.definition.parameters.usp"
                 },
                 "5": {
-                    "name": "variable.parameter.preprocessor.c"
+                    "name": "variable.parameter.preprocessor.usp"
                 },
                 "7": {
-                    "name": "punctuation.separator.parameters.c"
+                    "name": "punctuation.separator.parameters.usp"
                 },
                 "8": {
-                    "name": "punctuation.definition.parameters.c"
+                    "name": "punctuation.definition.parameters.usp"
                 }
             },
             "end": "(?=(?://|/\\*))|$",
-            "name": "meta.preprocessor.macro.c",
+            "name": "meta.preprocessor.macro.usp",
             "patterns": [
                 {
                     "match": "(?>\\\\\\s*\\n)",
-                    "name": "punctuation.separator.continuation.c"
+                    "name": "punctuation.separator.continuation.usp"
                 },
                 {
                     "include": "$base"
@@ -266,17 +266,17 @@
             "begin": "(?x)\n    \t\t(?:  ^                                 # begin-of-line\n    \t\t  |\n    \t\t     (?: (?= \\s )           (?<!else|new|return) (?<=\\w)      #  or word + space before name\n    \t\t       | (?= \\s*[A-Za-z_] ) (?<!&&)       (?<=[*&>])   #  or type modifier before name\n    \t\t     )\n    \t\t)\n    \t\t(\\s*) (?!(while|for|do|if|else|switch|catch|enumerate|return|r?iterate)\\s*\\()\n    \t\t(\n    \t\t\t(?: [A-Za-z_][A-Za-z0-9_]*+ | :: )++ |                  # actual name\n    \t\t\t(?: (?<=operator) (?: [-*&<>=+!]+ | \\(\\) | \\[\\] ) )  # if it is a C++ operator\n    \t\t)\n    \t\t \\s*(?=\\()",
             "beginCaptures": {
                 "1": {
-                    "name": "punctuation.whitespace.function.leading.c"
+                    "name": "punctuation.whitespace.function.leading.usp"
                 },
                 "3": {
-                    "name": "entity.name.function.c"
+                    "name": "entity.name.function.usp"
                 },
                 "4": {
-                    "name": "punctuation.definition.parameters.c"
+                    "name": "punctuation.definition.parameters.usp"
                 }
             },
             "end": "(?<=\\})|(?=#)|(;)",
-            "name": "meta.function.c",
+            "name": "meta.function.usp",
             "patterns": [
                 {
                     "include": "#comments"
@@ -286,7 +286,7 @@
                 },
                 {
                     "match": "\\b(const|override)\\b",
-                    "name": "storage.modifier.c"
+                    "name": "storage.modifier.usp"
                 },
                 {
                     "include": "#block"
@@ -298,7 +298,7 @@
         "angle_brackets": {
             "begin": "<",
             "end": ">",
-            "name": "meta.angle-brackets.c++",
+            "name": "meta.angle-brackets.usp",
             "patterns": [
                 {
                     "include": "#angle_brackets"
@@ -311,7 +311,7 @@
         "block": {
             "begin": "\\{",
             "end": "\\}",
-            "name": "meta.block.c",
+            "name": "meta.block.usp",
             "patterns": [
                 {
                     "include": "#block_innards"
@@ -323,10 +323,10 @@
                 {
                     "captures": {
                         "1": {
-                            "name": "punctuation.whitespace.support.function.leading.c"
+                            "name": "punctuation.whitespace.support.function.leading.usp"
                         },
                         "2": {
-                            "name": "support.function.C99.c"
+                            "name": "support.function.C99.usp"
                         }
                     },
                     "match": "(\\s*)\\b(hypot(f|l)?|s(scanf|ystem|nprintf|ca(nf|lb(n(f|l)?|ln(f|l)?))|i(n(h(f|l)?|f|l)?|gn(al|bit))|tr(s(tr|pn)|nc(py|at|mp)|c(spn|hr|oll|py|at|mp)|to(imax|d|u(l(l)?|max)|k|f|l(d|l)?)|error|pbrk|ftime|len|rchr|xfrm)|printf|et(jmp|vbuf|locale|buf)|qrt(f|l)?|w(scanf|printf)|rand)|n(e(arbyint(f|l)?|xt(toward(f|l)?|after(f|l)?))|an(f|l)?)|c(s(in(h(f|l)?|f|l)?|qrt(f|l)?)|cos(h(f)?|f|l)?|imag(f|l)?|t(ime|an(h(f|l)?|f|l)?)|o(s(h(f|l)?|f|l)?|nj(f|l)?|pysign(f|l)?)|p(ow(f|l)?|roj(f|l)?)|e(il(f|l)?|xp(f|l)?)|l(o(ck|g(f|l)?)|earerr)|a(sin(h(f|l)?|f|l)?|cos(h(f|l)?|f|l)?|tan(h(f|l)?|f|l)?|lloc|rg(f|l)?|bs(f|l)?)|real(f|l)?|brt(f|l)?)|t(ime|o(upper|lower)|an(h(f|l)?|f|l)?|runc(f|l)?|gamma(f|l)?|mp(nam|file))|i(s(space|n(ormal|an)|cntrl|inf|digit|u(nordered|pper)|p(unct|rint)|finite|w(space|c(ntrl|type)|digit|upper|p(unct|rint)|lower|al(num|pha)|graph|xdigit|blank)|l(ower|ess(equal|greater)?)|al(num|pha)|gr(eater(equal)?|aph)|xdigit|blank)|logb(f|l)?|max(div|abs))|di(v|fftime)|_Exit|unget(c|wc)|p(ow(f|l)?|ut(s|c(har)?|wc(har)?)|error|rintf)|e(rf(c(f|l)?|f|l)?|x(it|p(2(f|l)?|f|l|m1(f|l)?)?))|v(s(scanf|nprintf|canf|printf|w(scanf|printf))|printf|f(scanf|printf|w(scanf|printf))|w(scanf|printf)|a_(start|copy|end|arg))|qsort|f(s(canf|e(tpos|ek))|close|tell|open|dim(f|l)?|p(classify|ut(s|c|w(s|c))|rintf)|e(holdexcept|set(e(nv|xceptflag)|round)|clearexcept|testexcept|of|updateenv|r(aiseexcept|ror)|get(e(nv|xceptflag)|round))|flush|w(scanf|ide|printf|rite)|loor(f|l)?|abs(f|l)?|get(s|c|pos|w(s|c))|re(open|e|ad|xp(f|l)?)|m(in(f|l)?|od(f|l)?|a(f|l|x(f|l)?)?))|l(d(iv|exp(f|l)?)|o(ngjmp|cal(time|econv)|g(1(p(f|l)?|0(f|l)?)|2(f|l)?|f|l|b(f|l)?)?)|abs|l(div|abs|r(int(f|l)?|ound(f|l)?))|r(int(f|l)?|ound(f|l)?)|gamma(f|l)?)|w(scanf|c(s(s(tr|pn)|nc(py|at|mp)|c(spn|hr|oll|py|at|mp)|to(imax|d|u(l(l)?|max)|k|f|l(d|l)?|mbs)|pbrk|ftime|len|r(chr|tombs)|xfrm)|to(b|mb)|rtomb)|printf|mem(set|c(hr|py|mp)|move))|a(s(sert|ctime|in(h(f|l)?|f|l)?)|cos(h(f|l)?|f|l)?|t(o(i|f|l(l)?)|exit|an(h(f|l)?|2(f|l)?|f|l)?)|b(s|ort))|g(et(s|c(har)?|env|wc(har)?)|mtime)|r(int(f|l)?|ound(f|l)?|e(name|alloc|wind|m(ove|quo(f|l)?|ainder(f|l)?))|a(nd|ise))|b(search|towc)|m(odf(f|l)?|em(set|c(hr|py|mp)|move)|ktime|alloc|b(s(init|towcs|rtowcs)|towc|len|r(towc|len))))\\b"
@@ -334,29 +334,29 @@
                 {
                     "captures": {
                         "1": {
-                            "name": "punctuation.whitespace.function-call.leading.c"
+                            "name": "punctuation.whitespace.function-call.leading.usp"
                         },
                         "2": {
-                            "name": "support.function.any-method.c"
+                            "name": "support.function.any-method.usp"
                         },
                         "3": {
-                            "name": "punctuation.definition.parameters.c"
+                            "name": "punctuation.definition.parameters.usp"
                         }
                     },
                     "match": "(?x) (?: (?= \\s )  (?:(?<=else|new|return) | (?<!\\w)) (\\s+))?\n\t\t\t(\\b\n\t\t\t\t(?!(while|for|do|if|else|switch|catch|enumerate|return|r?iterate)\\s*\\()(?:(?!NS)[A-Za-z_][A-Za-z0-9_]*+\\b | :: )++                  # actual name\n\t\t\t)\n\t\t\t \\s*(\\()",
-                    "name": "meta.function-call.c"
+                    "name": "meta.function-call.usp"
                 },
                 {
                     "captures": {
                         "1": {
-                            "name": "variable.other.c"
+                            "name": "variable.other.usp"
                         },
                         "2": {
-                            "name": "punctuation.definition.parameters.c"
+                            "name": "punctuation.definition.parameters.usp"
                         }
                     },
                     "match": "(?x)\n\t\t\t        (?x)\n\t\t\t(?:\n\t\t\t     (?: (?= \\s )           (?<!else|new|return) (?<=\\w)\\s+      #  or word + space before name\n\t\t\t     )\n\t\t\t)\n\t\t\t(\n\t\t\t\t(?: [A-Za-z_][A-Za-z0-9_]*+ | :: )++    |              # actual name\n\t\t\t\t(?: (?<=operator) (?: [-*&<>=+!]+ | \\(\\) | \\[\\] ) )?  # if it is a C++ operator\n\t\t\t)\n\t\t\t \\s*(\\()",
-                    "name": "meta.initialization.c"
+                    "name": "meta.initialization.usp"
                 },
                 {
                     "include": "#block"
@@ -369,7 +369,7 @@
         "parens": {
             "begin": "\\(",
             "end": "\\)",
-            "name": "meta.parens.c",
+            "name": "meta.parens.usp",
             "patterns": [
                 {
                     "include": "$base"
@@ -380,11 +380,11 @@
             "patterns": [
                 {
                     "match": "\\\\(\\\\|[abefnprtv'\"?]|[0-3]\\d{,2}|[4-7]\\d?|x[a-fA-F0-9]{,2}|u[a-fA-F0-9]{,4}|U[a-fA-F0-9]{,8})",
-                    "name": "constant.character.escape.c"
+                    "name": "constant.character.escape.usp"
                 },
                 {
                     "match": "\\\\.",
-                    "name": "invalid.illegal.unknown-escape.c"
+                    "name": "invalid.illegal.unknown-escape.usp"
                 }
             ]
         },
@@ -392,11 +392,11 @@
             "patterns": [
                 {
                     "match": "(?x)%\n    \t\t\t\t\t\t(\\d+\\$)?                             # field (argument #)\n    \t\t\t\t\t\t[#0\\- +']*                           # flags\n    \t\t\t\t\t\t[,;:_]?                              # separator character (AltiVec)\n    \t\t\t\t\t\t((-?\\d+)|\\*(-?\\d+\\$)?)?              # minimum field width\n    \t\t\t\t\t\t(\\.((-?\\d+)|\\*(-?\\d+\\$)?)?)?         # precision\n    \t\t\t\t\t\t(hh|h|ll|l|j|t|z|q|L|vh|vl|v|hv|hl)? # length modifier\n    \t\t\t\t\t\t[diouxXDOUeEfFgGaACcSspn%]           # conversion type\n    \t\t\t\t\t",
-                    "name": "constant.other.placeholder.c"
+                    "name": "constant.other.placeholder.usp"
                 },
                 {
                     "match": "%",
-                    "name": "invalid.illegal.placeholder.c"
+                    "name": "invalid.illegal.placeholder.usp"
                 }
             ]
         },
@@ -409,7 +409,7 @@
                         }
                     },
                     "match": "^/\\* =(\\s*.*?)\\s*= \\*/$\\n?",
-                    "name": "comment.block.c"
+                    "name": "comment.block.usp"
                 },
                 {
                     "begin": "/\\*",
@@ -458,19 +458,19 @@
                     "begin": "(?x)\n    \t\t\t\t(?:  ^\\s*)                             # begin-of-line\n    \t\t\t\t((?!while|for|do|if|else|switch|catch|enumerate|r?iterate)[A-Za-z_][A-Za-z0-9_:]*) # actual name\n    \t\t\t\t \\s*(\\()                            # start bracket or end-of-line\n    \t\t\t",
                     "beginCaptures": {
                         "1": {
-                            "name": "entity.name.function.c++"
+                            "name": "entity.name.function.usp"
                         },
                         "2": {
-                            "name": "punctuation.definition.parameters.c"
+                            "name": "punctuation.definition.parameters.usp"
                         }
                     },
                     "end": "\\)",
                     "endCaptures": {
                         "0": {
-                            "name": "punctuation.definition.parameters.c"
+                            "name": "punctuation.definition.parameters.usp"
                         }
                     },
-                    "name": "meta.function.constructor.c++",
+                    "name": "meta.function.constructor.usp",
                     "patterns": [
                         {
                             "include": "$base"
@@ -481,11 +481,11 @@
                     "begin": "(?x)\n    \t\t\t\t(:)                            # begin-of-line\n    \t\t\t\t((?=\\s*[A-Za-z_][A-Za-z0-9_:]* # actual name\n    \t\t\t\t \\s*(\\()))                      # start bracket or end-of-line\n    \t\t\t",
                     "beginCaptures": {
                         "1": {
-                            "name": "punctuation.definition.parameters.c"
+                            "name": "punctuation.definition.parameters.usp"
                         }
                     },
                     "end": "(?=\\{)",
-                    "name": "meta.function.constructor.initializer-list.c++",
+                    "name": "meta.function.constructor.initializer-list.usp",
                     "patterns": [
                         {
                             "include": "$base"
@@ -500,11 +500,11 @@
                     "begin": "\\b(namespace)\\s+([A-Za-z_][_A-Za-z0-9:]*\\b)?+(?!\\s*?(;|=|,))",
                     "beginCaptures": {
                         "1": {
-                            "name": "keyword.control.c++"
+                            "name": "keyword.control.usp"
                         }
                     },
                     "end": "(?<=\\})",
-                    "name": "meta.namespace-block.c++",
+                    "name": "meta.namespace-block.usp",
                     "patterns": [
                         {
                             "begin": "\\{",
@@ -526,27 +526,27 @@
                 {
                     "captures": {
                         "1": {
-                            "name": "storage.type.c++"
+                            "name": "storage.type.usp"
                         },
                         "2": {
-                            "name": "entity.name.type.forward-decl.c++"
+                            "name": "entity.name.type.forward-decl.usp"
                         }
                     },
                     "match": "\\b(class|struct)\\s+([_A-Za-z][_A-Za-z0-9]*\\b);",
-                    "name": "meta.class-struct-block.c++"
+                    "name": "meta.class-struct-block.usp"
                 },
                 {
                     "begin": "\\b(class|struct)\\s+([_A-Za-z][_A-Za-z0-9]*\\b)",
                     "beginCaptures": {
                         "1": {
-                            "name": "storage.type.c++"
+                            "name": "storage.type.usp"
                         },
                         "2": {
-                            "name": "entity.name.type.c++"
+                            "name": "entity.name.type.usp"
                         }
                     },
                     "end": "(?<=\\})|(?=(;|,|\\(|\\)|>|\\[|\\]))",
-                    "name": "meta.class-struct-block.c++",
+                    "name": "meta.class-struct-block.usp",
                     "patterns": [
                         {
                             "include": "#angle_brackets"
@@ -554,11 +554,11 @@
                         {
                             "begin": "(?<!:):(?!:)",
                             "end": "(?=\\{)",
-                            "name": "meta.class-struct-block.base-classes.c++",
+                            "name": "meta.class-struct-block.base-classes.usp",
                             "patterns": [
                                 {
                                     "match": "\\b(private|protected|public|virtual)",
-                                    "name": "storage.modifier.c++"
+                                    "name": "storage.modifier.usp"
                                 },
                                 {
                                     "begin": "[_A-Za-z][_A-Za-z0-9]*\\b",
@@ -575,16 +575,16 @@
                             "begin": "(\\{)",
                             "beginCaptures": {
                                 "1": {
-                                    "name": "punctuation.definition.scope.c++"
+                                    "name": "punctuation.definition.scope.usp"
                                 }
                             },
                             "end": "(\\})(\\s*\\n)?",
                             "endCaptures": {
                                 "1": {
-                                    "name": "punctuation.definition.invalid.c++"
+                                    "name": "punctuation.definition.invalid.usp"
                                 },
                                 "2": {
-                                    "name": "invalid.illegal.you-forgot-semicolon.c++"
+                                    "name": "invalid.illegal.you-forgot-semicolon.usp"
                                 }
                             },
                             "patterns": [
@@ -608,11 +608,11 @@
                     "begin": "\\b(extern)(?=\\s*\")",
                     "beginCaptures": {
                         "1": {
-                            "name": "storage.modifier.c++"
+                            "name": "storage.modifier.usp"
                         }
                     },
                     "end": "(?<=\\})|(?=\\w)",
-                    "name": "meta.extern-block.c++",
+                    "name": "meta.extern-block.usp",
                     "patterns": [
                         {
                             "begin": "\\{",
