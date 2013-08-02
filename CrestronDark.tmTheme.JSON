@@ -36,9 +36,9 @@
         },
         {
             "name": "Number",
-            "scope": "constant.numeric",
+            "scope": "constant, constant.numeric, constant.language.boolean, support.constant",
             "settings": {
-                "foreground": "#E5E5E5"
+                "foreground": "#C44EBC"
             }
         },
         {
@@ -53,7 +53,7 @@
             "scope": "support.function",
             "settings": {
                 "fontStyle": "",
-                "foreground": "#30C4E8"
+                "foreground": "#47B6D1"
             }
         },
         {
@@ -61,12 +61,12 @@
             "scope": "storage.type, support.type",
             "settings": {
                 "fontStyle": "italic",
-                "foreground": "#30C4E8"
+                "foreground": "#47B6D1"
             }
         },
         {
             "name": "Variable",
-            "scope": "variable, support.other.variable, storage, constant, support.constant, keyword.other.skip",
+            "scope": "variable, support.other.variable, storage, keyword.other.skip",
             "settings": {
                 "fontStyle": "",
                 "foreground": "#BBBB44"
