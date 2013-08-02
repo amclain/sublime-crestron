@@ -38,35 +38,21 @@
         },
         {
             "name": "Number",
-            "scope": "constant.numeric",
+            "scope": "constant, constant.numeric",
             "settings": {
                 "foreground": "#000000"
             }
         },
         {
             "name": "Constant",
-            "scope": "constant, support.constant",
+            "scope": "support.constant",
             "settings": {
-                "foreground": "#003AFF"
-            }
-        },
-        {
-            "name": "User-defined constant",
-            "scope": "constant.character, constant.other",
-            "settings": {
-                "foreground": "#003AFF"
-            }
-        },
-        {
-            "name": "Variable",
-            "scope": "variable, support.other.variable",
-            "settings": {
-                "fontStyle": ""
+                "foreground": "#000000"
             }
         },
         {
             "name": "Keyword",
-            "scope": "keyword",
+            "scope": "keyword, support.function",
             "settings": {
                 "foreground": "#003AFF"
             }
@@ -97,7 +83,7 @@
         },
         {
             "name": "Function name",
-            "scope": "entity.name.function, support.function",
+            "scope": "entity.name.function",
             "settings": {
                 "fontStyle": "",
                 "foreground": "#808080"
