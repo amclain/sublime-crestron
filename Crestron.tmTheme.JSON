@@ -90,14 +90,6 @@
             }
         },
         {
-            "name": "Function argument",
-            "scope": "variable.parameter",
-            "settings": {
-                "fontStyle": "italic",
-                "foreground": "#000000"
-            }
-        },
-        {
             "name": "Invalid",
             "scope": "invalid",
             "settings": {
