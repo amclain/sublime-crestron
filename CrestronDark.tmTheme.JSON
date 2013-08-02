@@ -1,0 +1,78 @@
+{
+    "name": "Crestron",
+    "settings": [
+        {
+            "settings": {
+                "activeGuide": "#9D550FB0",
+                "background": "#272822",
+                "bracketContentsForeground": "#F8F8F2A5",
+                "bracketContentsOptions": "underline",
+                "bracketsForeground": "#F8F8F2A5",
+                "bracketsOptions": "underline",
+                "caret": "#F8F8F0",
+                "findHighlight": "#FFE792",
+                "findHighlightForeground": "#000000",
+                "foreground": "#C7C8CA",
+                "invisibles": "#3B3A32",
+                "lineHighlight": "#3E3D32",
+                "selection": "#49483E",
+                "selectionBorder": "#222218",
+                "tagsOptions": "stippled_underline"
+            }
+        },
+        {
+            "name": "Comment",
+            "scope": "comment",
+            "settings": {
+                "foreground": "#408620"
+            }
+        },
+        {
+            "name": "String",
+            "scope": "string",
+            "settings": {
+                "foreground": "#E6DB74"
+            }
+        },
+        {
+            "name": "Number",
+            "scope": "constant.numeric",
+            "settings": {
+                "foreground": "#AE81FF"
+            }
+        },
+        {
+            "name": "Keyword",
+            "scope": "keyword, entity, storage.type, support.type, support.class",
+            "settings": {
+                "foreground": "#269FA0"
+            }
+        },
+        {
+            "name": "Variable",
+            "scope": "variable, support.other.variable, storage, constant, support.constant",
+            "settings": {
+                "fontStyle": "",
+                "foreground": "#C7C8CA"
+            }
+        },
+        {
+            "name": "Function name/Parameter",
+            "scope": "entity.name.function, support.function, variable.parameter",
+            "settings": {
+                "fontStyle": "",
+                "foreground": "#C7C8CA"
+            }
+        },
+        {
+            "name": "Invalid",
+            "scope": "invalid",
+            "settings": {
+                "background": "#F92672",
+                "fontStyle": "",
+                "foreground": "#F8F8F0"
+            }
+        },
+    ],
+    "uuid": "D8D5E82E-3D5B-46B5-B38E-8C841C21347D"
+}
