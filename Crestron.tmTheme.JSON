@@ -38,7 +38,7 @@
         },
         {
             "name": "Number",
-            "scope": "constant, constant.numeric",
+            "scope": "constant.numeric",
             "settings": {
                 "foreground": "#000000"
             }
