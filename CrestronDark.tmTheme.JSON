@@ -12,7 +12,7 @@
                 "caret": "#F8F8F0",
                 "findHighlight": "#FFE792",
                 "findHighlightForeground": "#000000",
-                "foreground": "#C7C8CA",
+                "foreground": "#E5E5E5",
                 "invisibles": "#3B3A32",
                 "lineHighlight": "#3E3D32",
                 "selection": "#49483E",
@@ -24,36 +24,36 @@
             "name": "Comment",
             "scope": "comment",
             "settings": {
-                "foreground": "#457C2A"
+                "foreground": "#66CC66"
             }
         },
         {
             "name": "String",
             "scope": "string",
             "settings": {
-                "foreground": "#E6DB74"
+                "foreground": "#CCCC33"
             }
         },
         {
             "name": "Number",
             "scope": "constant.numeric",
             "settings": {
-                "foreground": "#AE81FF"
+                "foreground": "#E5E5E5"
             }
         },
         {
             "name": "Keyword",
             "scope": "keyword, entity, storage.type, support.type, support.class",
             "settings": {
-                "foreground": "#269FA0"
+                "foreground": "#E83063"
             }
         },
         {
             "name": "Variable",
-            "scope": "variable, support.other.variable, storage, constant, support.constant",
+            "scope": "variable, support.other.variable, storage, constant, support.constant, keyword.other.skip",
             "settings": {
                 "fontStyle": "",
-                "foreground": "#C7C8CA"
+                "foreground": "#BBBB44"
             }
         },
         {
@@ -61,7 +61,7 @@
             "scope": "entity.name.function, support.function, variable.parameter",
             "settings": {
                 "fontStyle": "",
-                "foreground": "#C7C8CA"
+                "foreground": "#BBBB44"
             }
         },
         {

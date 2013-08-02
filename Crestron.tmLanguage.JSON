@@ -141,7 +141,7 @@
                 {
                     "comment": "Crestron Skip Type",
                     "match": "(?i)\\b(_skip_)\\b",
-                    "name": "constant.language.skip"
+                    "name": "keyword.other.skip"
                 },
                 {
                     "comment": "Crestron Boolean Types",
