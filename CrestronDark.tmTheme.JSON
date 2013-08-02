@@ -49,6 +49,14 @@
             }
         },
         {
+            "name": "Variable Type",
+            "scope": "storage.type",
+            "settings": {
+                "fontStyle": "italic",
+                "foreground": "#30C4E8"
+            }
+        },
+        {
             "name": "Variable",
             "scope": "variable, support.other.variable, storage, constant, support.constant, keyword.other.skip",
             "settings": {
