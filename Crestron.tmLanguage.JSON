@@ -166,7 +166,7 @@
                 {
                     "comment": "Crestron Exception Functions",
                     "match": "(?i)\\b(GetExceptionCode|GetExceptionMessage)\\b",
-                    "name": "keyword.other.function.usp"
+                    "name": "support.function.usp"
                 },
                 {
                     "comment": "Crestron Conditionals",
@@ -176,82 +176,82 @@
                 {
                     "comment": "Crestron Array Functions",
                     "match": "(?i)\\b(GetLastModifiedArrayIndex|GetNumArrayCols|GetNumArrayRows|GetNumStructureArrayCols|ResizeArray|ResizeStructureArray|SetArray)\\b",
-                    "name": "keyword.other.function.usp"
+                    "name": "support.function.usp"
                 },
                 {
                     "comment": "Crestron Bit/Byte Functions",
                     "match": "(?i)\\b(bit|byte|high|highWord|low|LowerChar|LowWord|RotateLeft|RotateLeftLong|RotateRight|RotateRightLong|SetByte|UpperChar)\\b",
-                    "name": "keyword.other.function.usp"
+                    "name": "support.function.usp"
                 },
                 {
                     "comment": "Crestron CEN-OEM Functions",
                     "match": "(?i)\\b(_oem_break|_oem_cd|_oem_cts|_oem_dtr|_oem_long_break|_oem_max_string|_oem_pacing|_oem_rts|_oem_str_in|_oem_str_out)\\b",
-                    "name": "keyword.other.function.cen-oem.usp"
+                    "name": "support.function.cen-oem.usp"
                 },
                 {
                     "comment": "Crestron Data Conversion Functions",
                     "match": "(?i)\\b(atoi|atol|chr|HexToI|HexToL|HexToSI|HexToSL|itoa|itohex|ltoa|ltohex)\\b",
-                    "name": "keyword.other.function.usp"
+                    "name": "support.function.usp"
                 },
                 {
                     "comment": "Crestron Socket Access Functions",
                     "match": "(?i)\\b(SocketConnect|SocketConnectClient|SocketDisconnect|SocketDisconnectClient|SocketGetAddressAsRequested|SocketGetPortNumber|SocketGetRemoteIPAddress|SocketGetSenderIPAddress|SocketGetStatus|SocketIsBroadcast|SocketIsMulticast|SocketReceive|SocketSend|SocketServerStartListen|SocketServerStopListen|SocketStatus|SocketUDP_Disable|SocketUDP_Enable)\\b",
-                    "name": "keyword.other.function.usp"
+                    "name": "support.function.usp"
                 },
                 {
                     "comment": "Crestron Email Functions",
                     "match": "(?i)\\b(SendMail|SendMailAdvance|SendMailWithAttachments)\\b",
-                    "name": "keyword.other.function.usp"
+                    "name": "support.function.usp"
                 },
                 {
                     "comment": "Crestron Encoding Functions",
                     "match": "(?i)\\b(ascii|GetEncoding|SetEncoding|Inherit|ToASCII)\\b",
-                    "name": "keyword.other.function.usp"
+                    "name": "support.function.usp"
                 },
                 {
                     "comment": "Crestron File Functions",
                     "match": "(?i)\\b(file_info|FileBOF|FileClose|FileDelete|FileDeleteShared|FileEOF|FileLength|FileOpen|FileOpenShared|FileRead|FileSeek|FileWrite|FindClose|FindFirst|FindFirstShared|FindNext|GetCurrentDirectory|IsDirectory|IsHidden|IsReadOnly|IsSystem|IsVolume|MakeDirectory|MakeDirectoryShared|ReadInteger|ReadIntegerArray|ReadLongInteger|ReadLongIntegerArray|ReadSignedInteger|ReadSignedIntegerArray|ReadSignedLongInteger|ReadSignedLongIntegerArray|ReadString|ReadStringArray|ReadStructure|RemoveDirectory|RemoveDirectoryShared|SetCurrentDirectory|StartFileOperations|WaitForNewDisk|WriteInteger|WriteIntegerArray|WriteLongInteger|WriteLongIntegerArray|WriteSignedInteger|WriteSignedIntegerArray|WriteSignedLongInteger|WriteSignedLongIntegerArray|WriteString|WriteStringArray|WriteStructure)\\b",
-                    "name": "keyword.other.function.usp"
+                    "name": "support.function.usp"
                 },
                 {
                     "comment": "Crestron Math Functions",
                     "match": "(?i)\\b(abs|max|min|muldiv|smax|smin)\\b",
-                    "name": "keyword.other.function.usp"
+                    "name": "support.function.usp"
                 },
                 {
                     "comment": "Crestron Ramp Functions",
                     "match": "(?i)\\b(CompareRampsByAttribute|CompareRampsByID|CreateRamp|GetRampInfo|InitializeRampInfo|InitializeRampInfoArray|IsRamping|ramp_info|StopRamp)\\b",
-                    "name": "keyword.other.function.usp"
+                    "name": "support.function.usp"
                 },
                 {
                     "comment": "Crestron Random Number Functions",
                     "match": "(?i)\\b(random|rnd|seed)\\b",
-                    "name": "keyword.other.function.usp"
+                    "name": "support.function.usp"
                 },
                 {
                     "comment": "Crestron String Functions",
                     "match": "(?i)\\b(makestring|print|trace|ClearBuffer|CompareStrings|CompareStringsNoCase|find|FindNoCase|gather|GatherByLength|GetC|left|len|lower|mid|remove|RemoveByLength|ResizeString|ReverseFind|ReverseFindNoCase|right|SetString|upper)\\b",
-                    "name": "keyword.other.function.usp"
+                    "name": "support.function.usp"
                 },
                 {
                     "comment": "Crestron System Control Functions",
                     "match": "(?i)\\b(delay|ProcessLogic|pulse|TerminateEvent|WaitForInitializationComplete)\\b",
-                    "name": "keyword.other.function.usp"
+                    "name": "support.function.usp"
                 },
                 {
                     "comment": "Crestron System Initialization Functions",
                     "match": "(?i)\\b(GenerateUserError|GenerateUserNotice|GenerateUserWarning|GetCIP|GetCrestnet|GetModelNumber|GetProgramNumber|GetSeries|GetSlot|GetSymbolInstanceName|GetSymbolReferenceName|IsSignalDefined|MakeProgramFilename|SendCresnetPacket|SendPacketToCPU|SetCIP|SetCresnet|SetSlot)\\b",
-                    "name": "keyword.other.function.usp"
+                    "name": "support.function.usp"
                 },
                 {
                     "comment": "Crestron Time/Date Functions",
                     "match": "(?i)\\b(date|day|FileDate|FileDay|FileGetDateNum|FileGetDayOfWeekNum|FileGetHourNum|FileGetMinutesNum|FileGetMonthNum|FileGetSecondsNum|FileGetYearNum|FileMonth|FileTime|GetDateNum|GetDayOfWeekNum|GetDST|GetGMTOffset|GetHourNum|GetHSeconds|GetMinutesNum|GetMonthNum|GetSecondsNum|GetTicks|GetYearNum|month|SetClock|SetDate|SetGMTOffset|time)\\b",
-                    "name": "keyword.other.function.usp"
+                    "name": "support.function.usp"
                 },
                 {
                     "comment": "Crestron Wait Functions",
                     "match": "(?i)\\b(CancelAllWait|CancelWait|PauseAllWait|PauseWait|ResumeAllWait|ResumeWait|RetimeWait|wait)\\b",
-                    "name": "keyword.other.function.wait.usp"
+                    "name": "support.function.wait.usp"
                 }
             ]
         },
