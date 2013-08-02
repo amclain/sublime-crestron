@@ -43,14 +43,22 @@
         },
         {
             "name": "Keyword",
-            "scope": "keyword, entity, storage.type, support.type, support.class",
+            "scope": "keyword, entity",
             "settings": {
                 "foreground": "#E83063"
             }
         },
         {
+            "name": "Support Function",
+            "scope": "support.function",
+            "settings": {
+                "fontStyle": "",
+                "foreground": "#30C4E8"
+            }
+        },
+        {
             "name": "Variable Type",
-            "scope": "storage.type",
+            "scope": "storage.type, support.type",
             "settings": {
                 "fontStyle": "italic",
                 "foreground": "#30C4E8"
@@ -66,7 +74,7 @@
         },
         {
             "name": "Function name/Parameter",
-            "scope": "entity.name.function, support.function, variable.parameter",
+            "scope": "entity.name.function, variable.parameter",
             "settings": {
                 "fontStyle": "",
                 "foreground": "#BBBB44"
