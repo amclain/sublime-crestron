@@ -125,7 +125,12 @@
             "patterns": [
                 {
                     "comment": "Crestron Compiler Directives",
-                    "match": "(?i)(#\\b(analog_serial_expand|category|crestron_library|default_nonvolatile|default_volatile|define_constant|digital_expand|enable_dynamic|enable_stack_checking|enable_trace|encoding_ascii|encoding_utf16|encoding_inherit_from_parent|encoding_inherit_from_program|help|help_begin|help_end|help_pdf_file|hint|if_defined|if_not_defined|endif|if_series2|if_series3|large_stack|max_internal_buffer_size|output_shift|print_to_trace|symbol_name|user_library)\\b|parameter_properties)",
+                    "match": "(?i)(#\\b(analog_serial_expand|category|crestron_library|default_nonvolatile|default_volatile|define_constant|digital_expand|enable_dynamic|enable_stack_checking|enable_trace|encoding_ascii|encoding_utf16|encoding_inherit_from_parent|encoding_inherit_from_program|help|help_begin|help_end|help_pdf_file|hint|if_defined|if_not_defined|endif|if_series2|if_series3|large_stack|max_internal_buffer_size|output_shift|print_to_trace|symbol_name|user_library)\\b)",
+                    "name": "keyword.other.preprocessor.usp"
+                },
+                {
+                    "comment": "Crestron Parameter Properties",
+                    "match": "(?i)(#\\b(begin_parameter_properties|end_parameter_properties|begin_prop_full_description|end_prop_full_description|begin_prop_notes|end_prop_notes)\\b)",
                     "name": "keyword.other.preprocessor.usp"
                 },
                 {
