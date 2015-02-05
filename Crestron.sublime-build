@@ -9,6 +9,6 @@
 		{
 			"name": "Run",
 			"shell_cmd": "SPlusCC \\build \"${file}\" \\target series2 series3"
-		},
+		}
 	]
 }
